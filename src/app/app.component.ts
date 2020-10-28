@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     private translateService: TranslateService,
   ) {
     this.translateService.addLangs(['de', 'en']);
-    const previousLang = localStorage.getItem('selectedLang');
+    const previousLang = sessionStorage.getItem('selectedLang');
     const lang = previousLang || 'en';
     this.translateService.setDefaultLang(lang);
     translateService.use(lang);
@@ -66,12 +66,12 @@ export class AppComponent implements OnInit {
   }
 
   getPreviousTreeColumnIndex(): number {
-    const index = localStorage.getItem('treeColumnIndex');
+    const index = sessionStorage.getItem('treeColumnIndex');
     return index ? parseInt(index, 10) : 0;
   }
 
   setTreeColumnIndex(index: number): void {
-    localStorage.setItem('treeColumnIndex', index.toString());
+    sessionStorage.setItem('treeColumnIndex', index.toString());
     window.location.reload();
   }
 }
