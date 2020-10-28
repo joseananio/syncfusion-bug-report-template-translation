@@ -5,6 +5,7 @@ export let sampleData: Object[] = [
     {
         taskID: 1,
         taskName: 'Planning',
+        taskStatus: 0,
         startDate: new Date('02/03/2017'),
         endDate: new Date('02/07/2017'),
         progress: 100,
@@ -21,6 +22,7 @@ export let sampleData: Object[] = [
     },
     {
         taskID: 6,
+        taskStatus: 2,
         taskName: 'Design',
         startDate: new Date('02/10/2017'),
         endDate: new Date('02/14/2017'),
@@ -39,6 +41,7 @@ export let sampleData: Object[] = [
     },
     {
         taskID: 12,
+        taskStatus: 1,
         taskName: 'Implementation Phase',
         startDate: new Date('02/17/2017'),
         endDate: new Date('02/27/2017'),

@@ -1,8 +1,21 @@
-<ejs-treegrid [dataSource]='data' [treeColumnIndex]='1' childMapping='subtasks'>
-    <e-columns>
-        <e-column field='taskID' headerText='Task ID' textAlign='Right' width=70></e-column>
-        <e-column field='taskName' headerText='Task Name' textAlign='Left' width=200></e-column>
-        <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=90></e-column>
-        <e-column field='duration' headerText='Duration' textAlign='Right' width=80></e-column>
-    </e-columns>
-    </ejs-treegrid>
+<div class="lang-selector">
+  {{'GLOBAL.PAGE_TITLE' | translate}}
+  <app-lang-selector></app-lang-selector>
+</div>
+<ejs-treegrid [dataSource]='data' [treeColumnIndex]="1" childMapping='subtasks'>
+  <e-columns>
+    <e-column field='taskStatus' [headerText]="'GLOBAL.TASK_STATUS' | translate" textAlign='Right' width=70>
+      <ng-template #template let-data>
+        <span
+          [title]="getStatus(data.taskStatus) | translate"
+          class="status-label">
+          {{ getStatus(data.taskStatus) | translate }}
+        </span>
+      </ng-template>
+    </e-column>
+    <e-column field='taskID' headerText='Task ID' textAlign='Right' width=70></e-column>
+    <e-column field='taskName' headerText='Task Name' textAlign='Left' width=200></e-column>
+    <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=90></e-column>
+    <e-column field='duration' headerText='Duration' textAlign='Right' width=80></e-column>
+  </e-columns>
+</ejs-treegrid>

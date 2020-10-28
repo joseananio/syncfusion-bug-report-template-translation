@@ -1,23 +1,36 @@
+import { LangSelectorComponent } from './../components/lang-selector/lang-selector.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import the TreeGridModule for the TreeGrid component
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
-import { AppComponent }  from './app.component';
-import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-translate/core";
+import { AppComponent } from './app.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LangSelectorComponent,
   ],
   imports: [
     BrowserModule,
     TreeGridModule,
-    TranslateModule.forRoot(),
+    HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        },
+        defaultLanguage: 'en'
+    })
   ],
-  providers: [{
-    useClass: TranslateService,
-    provide: TranslateService
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

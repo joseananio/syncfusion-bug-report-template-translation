@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "i18n:init": "ngx-translate-extract --input ./src --output ./src/assets/i18n/template.json --key-as-default-value --replace --format json",
-    "i18n:extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/{en,de}.json --clean --format json"
+    "i18n:update": "ngx-translate-extract --input ./src --output ./src/assets/i18n/template.json --clean --format json"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "@angular/router": "~9.1.12",
     "@biesbjerg/ngx-translate-extract-marker": "^1.0.0",
     "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "@syncfusion/ej2-angular-treegrid": "^18.3.42",
     "@syncfusion/ej2-data": "^18.3.42",
     "core-js": "^2.5.4",

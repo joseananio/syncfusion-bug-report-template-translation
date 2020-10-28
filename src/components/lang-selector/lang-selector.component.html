@@ -1,0 +1,9 @@
+<div>
+  <button
+    *ngFor="let lang of appLanguages"
+    (click)="onLangChange(lang.id)"
+    [class.active]="lang.id === selectedLang">
+    {{ lang.name }}
+  </button>
+    {{ 'GLOBAL.SELECTED_LANG' | translate }}: {{selectedLang}}
+</div>

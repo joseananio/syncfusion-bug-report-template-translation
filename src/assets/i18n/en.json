@@ -1,0 +1,8 @@
+{
+	"GLOBAL.PAGE_TITLE": "TreeGrid Language Template Test",
+  "GLOBAL.SELECTED_LANG": "Selected Language",
+  "GLOBAL.TASK_STATUS": "Status",
+  "GLOBAL.TASK_STATUS_DONE": "Done",
+  "GLOBAL.TASK_STATUS_PENDING": "Pending",
+  "GLOBAL.TASK_STATUS_CANCELLED": "Cancelled"
+}
