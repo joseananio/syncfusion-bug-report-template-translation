@@ -1,8 +1,19 @@
 <div class="lang-selector">
-  {{'GLOBAL.PAGE_TITLE' | translate}}
+  <h3>{{'GLOBAL.PAGE_TITLE' | translate}}</h3>
+  <div>
+    <label for="TreeColumnIndex">Select column to Collapse with (treeColumnIndex)&nbsp;</label>
+    <select name="treeColumnIndex" id="TreeColumnIndex" [(ngModel)]="treeColumnIndex" (change)="setTreeColumnIndex(treeColumnIndex)">
+      <option value="0">0 - Status</option>
+      <option value="1">1 - Task ID</option>
+      <option value="2">2 - Task Name</option>
+      <option value="3">3 - Start Date</option>
+      <option value="4">4 - Duration</option>
+    </select>
+  </div>
   <app-lang-selector></app-lang-selector>
 </div>
-<ejs-treegrid [dataSource]='data' [treeColumnIndex]="1" childMapping='subtasks'>
+
+<ejs-treegrid [dataSource]='data' [treeColumnIndex]="treeColumnIndex || 0" childMapping='subtasks'>
   <e-columns>
     <e-column field='taskStatus' [headerText]="'GLOBAL.TASK_STATUS' | translate" textAlign='Right' width=70>
       <ng-template #template let-data>

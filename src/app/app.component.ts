@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   // public data: DataManager;
   public data: Object[];
 
+  public treeColumnIndex = 1;
+
   @ViewChild('treegrid')
   public treegrid: TreeGridComponent;
 
@@ -38,12 +40,15 @@ export class AppComponent implements OnInit {
 
     this.data = sampleData;
 
+    // very artificial async simulation
     this.translateService.onLangChange.subscribe((langId: string) => {
       this.data = [];
       setTimeout(() => {
         this.data = sampleData;
       }, 1000);
     });
+
+    this.treeColumnIndex = this.getPreviousTreeColumnIndex();
   }
 
   getStatus(taskStatus: number) {
@@ -56,5 +61,15 @@ export class AppComponent implements OnInit {
       default:
         return 'GLOBAL.TASK_STATUS_PENDING';
     }
+  }
+
+  getPreviousTreeColumnIndex(): number {
+    const index = localStorage.getItem('treeColumnIndex');
+    return index ? parseInt(index, 10) : 1;
+  }
+
+  setTreeColumnIndex(index: number): void {
+    localStorage.setItem('treeColumnIndex', index.toString());
+    window.location.reload();
   }
 }
