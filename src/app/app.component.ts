@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
 
   getPreviousTreeColumnIndex(): number {
     const index = localStorage.getItem('treeColumnIndex');
-    return index ? parseInt(index, 10) : 1;
+    return index ? parseInt(index, 10) : 0;
   }
 
   setTreeColumnIndex(index: number): void {
