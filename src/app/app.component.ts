@@ -28,8 +28,10 @@ export class AppComponent implements OnInit {
     private translateService: TranslateService,
   ) {
     this.translateService.addLangs(['de', 'en']);
-    this.translateService.setDefaultLang('en');
-    translateService.use('en');
+    const previousLang = localStorage.getItem('selectedLang');
+    const lang = previousLang || 'en';
+    this.translateService.setDefaultLang(lang);
+    translateService.use(lang);
   }
 
   ngOnInit(): void {
@@ -43,9 +45,9 @@ export class AppComponent implements OnInit {
     // very artificial async simulation
     this.translateService.onLangChange.subscribe((langId: string) => {
       this.data = [];
-      setTimeout(() => {
+      // setTimeout(() => {
         this.data = sampleData;
-      }, 1000);
+      // }, 1000);
     });
 
     this.treeColumnIndex = this.getPreviousTreeColumnIndex();

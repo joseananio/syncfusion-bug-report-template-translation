@@ -36,6 +36,7 @@ export class LangSelectorComponent implements OnInit {
   onLangChange(langId: string): void {
     this.translate.use(langId).subscribe(() => {
       this.selectedLang = this.translate.currentLang;
+      sessionStorage.setItem('selectedLang', this.translate.currentLang);
     });
   }
 }
