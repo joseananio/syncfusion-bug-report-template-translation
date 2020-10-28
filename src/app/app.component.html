@@ -15,7 +15,7 @@
 
 <ejs-treegrid [dataSource]='data' [treeColumnIndex]="treeColumnIndex || 0" childMapping='subtasks'>
   <e-columns>
-    <e-column field='taskStatus' [headerText]="'GLOBAL.TASK_STATUS' | translate" textAlign='Right' width=70>
+    <e-column field='taskStatus' [headerText]="'GLOBAL.TASK_STATUS' | translate" textAlign='Right' width=120>
       <ng-template #template let-data>
         <span
           [title]="getStatus(data.taskStatus) | translate"
@@ -24,7 +24,7 @@
         </span>
       </ng-template>
     </e-column>
-    <e-column field='taskID' headerText='Task ID' textAlign='Right' width=70></e-column>
+    <e-column field='taskID' headerText='Task ID' textAlign='Right' width=50></e-column>
     <e-column field='taskName' headerText='Task Name' textAlign='Left' width=200></e-column>
     <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=90></e-column>
     <e-column field='duration' headerText='Duration' textAlign='Right' width=80></e-column>
