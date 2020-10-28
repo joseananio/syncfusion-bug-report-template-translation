@@ -42,13 +42,13 @@ export class AppComponent implements OnInit {
 
     this.data = sampleData;
 
-    // very artificial async simulation
-    this.translateService.onLangChange.subscribe((langId: string) => {
-      this.data = [];
-      // setTimeout(() => {
-        this.data = sampleData;
-      // }, 1000);
-    });
+    // this.translateService.onLangChange.subscribe((langId: string) => {
+    //   this.data = [];
+    //   // very artificial async simulation
+    //   // setTimeout(() => {
+    //     this.data = sampleData;
+    //   // }, 1000);
+    // });
 
     this.treeColumnIndex = this.getPreviousTreeColumnIndex();
   }
