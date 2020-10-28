@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   // public data: DataManager;
   public data: Object[];
 
-  public treeColumnIndex = 1;
+  public treeColumnIndex = 0;
 
   @ViewChild('treegrid')
   public treegrid: TreeGridComponent;
