@@ -1183,7 +1183,7 @@
   dependencies:
     "@syncfusion/ej2-icons" "~18.3.35"
 
-"@syncfusion/ej2-buttons@~18.3.35", "@syncfusion/ej2-buttons@~18.3.40":
+"@syncfusion/ej2-buttons@^18.3.40", "@syncfusion/ej2-buttons@~18.3.35", "@syncfusion/ej2-buttons@~18.3.40":
   version "18.3.40"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-buttons/-/ej2-buttons-18.3.40.tgz#ee25fadf07b21e714318e8dec9dd9359db7451e0"
   integrity sha512-8e/iFCtWnBhKkvB+TQI3I1ejObigQTGF5dPD/IhPX+Fbyb/4J/pcZbiVwErfzDZr7Y9X0DjsHzmIbm+FY6xOZA==
@@ -1235,7 +1235,7 @@
     "@syncfusion/ej2-base" "~18.3.35"
     "@syncfusion/ej2-compression" "~18.3.35"
 
-"@syncfusion/ej2-file-utils@~18.3.35":
+"@syncfusion/ej2-file-utils@^18.3.35", "@syncfusion/ej2-file-utils@~18.3.35":
   version "18.3.35"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-file-utils/-/ej2-file-utils-18.3.35.tgz#69d40a3e5bdbd71289efb3389c70fb5d49ccebd0"
   integrity sha512-TAZPIypWFf7jOvxW/Lme6zN+cqPcCWnlK0Oh1j9l+51XTPSAMQItGpcQW50RDnAo+HsAZtaiW7ES3tMFVfFQIA==
